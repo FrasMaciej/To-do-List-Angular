@@ -1,7 +1,23 @@
 <mat-selection-list #tasks>
-    <mat-list-option *ngFor="let task of tasksList" checkboxPosition="before"> 
-      {{task.description}}
+    
+    <mat-list-option id="tasksList" *ngFor="let task of tasksList" checkboxPosition="before"> 
+        <div style="display:flex; align-items:center">
+            
+
+            <div style="margin-left: -10px; margin-top: -1px;">
+
+            <button id = "deleteButton" mat-icon-button color="warn" (click)="removeTask(task)" (click)="onRemove($event)">
+                <mat-icon>delete</mat-icon>
+            </button>
+            
+            </div>
+
+            {{task.description}}
+
+        </div>
     </mat-list-option>
+
+    
     
 </mat-selection-list>
   

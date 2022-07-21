@@ -18,6 +18,10 @@ export class TasksService {
     return this.tasks;
   }
 
+  removeTask(task: Task) {
+    this.tasks.pop();
+  }
+
   clearTasks() {
     this.tasks = [];
     return this.tasks;
