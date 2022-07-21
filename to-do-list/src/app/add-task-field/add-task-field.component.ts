@@ -1,4 +1,6 @@
 import { Component} from '@angular/core';
+import { TasksService } from '../tasks.service';
+import { Task } from '../task';
 
 @Component({
   selector: 'app-add-task-field',
@@ -7,5 +9,16 @@ import { Component} from '@angular/core';
 })
 export class AddTaskFieldComponent {
   value = '';
+
+  constructor(
+    private tasksService: TasksService
+  ) {}
+
+  addTask(content: string){
+    const newTask = {
+      description: content,
+    } as Task
+    this.tasksService.addNewTask(newTask)
+  }
 
 }

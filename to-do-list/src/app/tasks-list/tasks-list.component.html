@@ -1,0 +1,10 @@
+<mat-selection-list #tasks>
+    <mat-list-option *ngFor="let task of tasksList" checkboxPosition="before"> 
+      {{task}}
+    </mat-list-option>
+    
+</mat-selection-list>
+  
+  <p>
+    Wykonano: {{tasks.selectedOptions.selected.length}}/{{tasksList.length}} 
+  </p>

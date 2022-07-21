@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Task } from './task';
 
+
 @Injectable({
   providedIn: 'root'
 })
-
-export class TasksContainerService {
+export class TasksService {
   tasks: Task[] = [];
 
   constructor() { }
@@ -22,5 +22,4 @@ export class TasksContainerService {
     this.tasks = [];
     return this.tasks;
   }
-
 }
